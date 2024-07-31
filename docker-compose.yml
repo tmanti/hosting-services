@@ -7,7 +7,7 @@ services:
       - /etc/letsencrypt/live:/etc/letsencrypt/live:ro
       - ./index.html::/usr/share/nginx/html/index.html
     ports:
-      - "8080:80"
+      - "80:80"
 
 networks:
   passmanager_default:
