@@ -8,6 +8,8 @@ services:
       - ./index.html:/usr/share/nginx/html/index.html
     ports:
       - "80:80"
+    networks:
+      - passmanager_default
 
 networks:
   passmanager_default:
