@@ -10,8 +10,7 @@ services:
       #personal site
       - /etc/letsencrypt/live/tmanti.dev/fullchain.pem:/etc/nginx/ssl/root/fullchain.pem
       - /etc/letsencrypt/live/tmanti.dev/privkey.pem:/etc/nginx/ssl/root/privkey.pem
-
-      - ./index.html:/usr/share/nginx/html/index.html
+      - ./index.html:/usr/share/nginx/html/index.html #placeholder
     ports:
       - "80:80"
       - "443:443"
