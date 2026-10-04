@@ -7,6 +7,9 @@ services:
       #passmanager
       - /etc/letsencrypt/live/pass.tmanti.dev/fullchain.pem:/etc/nginx/ssl/pass/fullchain.pem
       - /etc/letsencrypt/live/pass.tmanti.dev/privkey.pem:/etc/nginx/ssl/pass/privkey.pem
+      #cookbook
+      - /etc/letsencrypt/live/cookbook.tmanti.dev/fullchain.pem:/etc/nginx/ssl/cookbook/fullchain.pem
+      - /etc/letsencrypt/live/cookbook.tmanti.dev/privkey.pem:/etc/nginx/ssl/cookbook/privkey.pem
       #personal site
       - /etc/letsencrypt/live/tmanti.dev/fullchain.pem:/etc/nginx/ssl/root/fullchain.pem
       - /etc/letsencrypt/live/tmanti.dev/privkey.pem:/etc/nginx/ssl/root/privkey.pem
@@ -16,7 +19,10 @@ services:
       - "443:443"
     networks:
       - passmanager_default
+      - cookbook_default
 
 networks:
   passmanager_default:
+    external: true
+  cookbook_default:
     external: true
